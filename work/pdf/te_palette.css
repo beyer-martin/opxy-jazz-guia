@@ -1,0 +1,35 @@
+/* Colors from the saved official OP–XY guide: reference-layout.html and
+   te-reference/root.NRW9iUxr.css. Keep the workshop hierarchy monochrome. */
+:root{
+ --guide-bg:#0f0e12;
+ --guide-surface:rgba(205,205,205,.05);
+ --guide-active:#272727;
+ --guide-ink:#b2b2b2;
+ --guide-strong:#e5e5e5;
+ --guide-muted:#949494;
+ --guide-line:#3f3e43;
+ --guide-control:#7f7f7f;
+ --paper:var(--guide-bg);--ink:var(--guide-ink);--muted:var(--guide-muted);
+ --line:var(--guide-line);--accent:var(--guide-strong)
+}
+html,body{background:var(--guide-bg)!important;color:var(--guide-ink);color-scheme:dark}
+.wrap,#index a.toc-link{color:var(--guide-ink)}
+.wrap :is(h1,h2,h3,h4),.integrated-workshop .integrated-instrument-heading h3{color:var(--guide-strong)}
+#index .toc-heading p,#index .toc-group h3{color:var(--guide-muted)}
+.integrated-workshop .theory-tools,.integrated-workshop .integrated-instrument{background:var(--guide-bg)}
+.integrated-workshop .cycle-brief{border-color:var(--guide-ink)}
+.integrated-workshop .cycle-label,.integrated-workshop .cycle-brief .cycle-label{color:var(--guide-muted)}
+.integrated-workshop .continuity-controls button{border-color:var(--guide-control)}
+.integrated-workshop :is(input,select,textarea){accent-color:var(--guide-ink)}
+.integrated-workshop .theory-tools .theory-role-fifth b{color:var(--guide-ink)}
+.integrated-workshop .focus-grid .strip-step.playing{box-shadow:inset 0 -3px var(--guide-strong)}
+.integrated-workshop .sim-cursor{stroke:var(--guide-strong)}
+.integrated-workshop .focus-library{background:var(--guide-bg);color:var(--guide-ink)}
+.integrated-workshop .focus-library-top{background:var(--guide-bg)}
+.integrated-workshop .focus-library-top button{background:var(--guide-strong);color:var(--guide-bg)}
+.control-map-svg a:hover .control-pin,.control-map-svg a:focus .control-pin,.control-map-svg a.selected .control-pin{fill:var(--guide-strong)}
+.control-legend button[aria-pressed=true] span{color:var(--guide-strong)}
+@media print{
+ :root{--guide-bg:#fff;--guide-surface:#f5f5f5;--guide-active:#e5e5e5;--guide-ink:#222;--guide-strong:#111;--guide-muted:#555;--guide-line:#ccc;--guide-control:#777}
+ html,body{background:#fff!important;color:#222!important;color-scheme:light}
+}

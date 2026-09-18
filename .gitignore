@@ -5,3 +5,7 @@ __pycache__/
 .env.*
 node_modules/
 *.log
+
+# Local design alternatives and pre-edit snapshots
+work/backups/
+work/previews/

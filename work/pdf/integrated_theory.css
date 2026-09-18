@@ -1,0 +1,23 @@
+/* The musical explanation remains visible next to the instrument. */
+.integrated-theory{--it-ink:var(--guide-strong);--it-muted:var(--guide-ink);--it-rule:var(--guide-line);--it-accent:var(--guide-ink);color:var(--it-ink);font-family:Arial,Helvetica,sans-serif;min-width:0}
+.integrated-theory .theory-eyebrow{font-size:11px!important;font-weight:700;letter-spacing:.14em;line-height:1.5;color:var(--it-accent);margin:0 0 10px!important}
+.integrated-theory>h3{font-family:Arial,Helvetica,sans-serif!important;font-size:clamp(23px,2.1vw,30px)!important;line-height:1.12;letter-spacing:-.025em;color:var(--it-ink)!important;margin:0 0 24px!important;font-weight:700!important;max-width:26ch}
+.integrated-theory .theory-section{border-top:1px solid var(--it-rule);padding:20px 0 0;margin:0 0 23px;min-width:0}
+.integrated-theory .theory-section:last-child{margin-bottom:0}
+.integrated-theory .theory-section h4{font-family:Arial,Helvetica,sans-serif!important;font-size:17px!important;font-weight:700!important;letter-spacing:-.012em;line-height:1.35;color:var(--it-ink)!important;margin:0 0 12px!important;display:flex;align-items:baseline;gap:10px}
+.integrated-theory p{font-size:15px!important;line-height:1.65!important;margin:0 0 13px!important;color:var(--guide-ink);max-width:68ch}
+.integrated-theory strong{color:var(--it-ink);font-weight:700}
+.integrated-theory .theory-check{border-left:3px solid var(--it-accent);padding:12px 14px;margin:16px 0 0!important;background:var(--guide-surface);color:var(--guide-ink);border-radius:0 5px 5px 0}
+.integrated-theory .theory-check strong{color:var(--guide-strong)}
+.integrated-theory .theory-diagram{margin:14px 0 17px!important;padding:13px 14px;border:1px solid var(--it-rule);border-radius:8px;background:var(--guide-surface);min-width:0;max-width:100%}
+.integrated-theory .theory-diagram figcaption{font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.5;color:var(--it-muted);margin:0 0 10px}
+.integrated-theory .theory-table-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+.integrated-theory table{border-collapse:collapse;width:100%;font-family:Arial,Helvetica,sans-serif;font-size:12px!important;line-height:1.5;margin:0!important;min-width:0!important}
+.integrated-theory table th,.integrated-theory table td{border:0!important;border-bottom:1px solid var(--guide-line)!important;padding:8px 7px!important;text-align:left;vertical-align:top;color:var(--guide-strong);font-size:12px!important;line-height:1.5;font-weight:400;white-space:normal}
+.integrated-theory table thead th{color:var(--it-muted);font-weight:400;font-size:11px!important;padding-top:0!important}
+.integrated-theory table th[scope=row]{color:var(--guide-strong);font-weight:700}
+.integrated-theory table tr>:first-child{padding-left:0!important}
+.integrated-theory table tr>:last-child{padding-right:0!important}
+.integrated-theory table tbody tr:last-child>*{border-bottom:0!important;padding-bottom:0!important}
+@media(max-width:600px){.integrated-theory>h3{max-width:30ch;font-size:24px!important}.integrated-theory .theory-section{padding-top:18px;margin-bottom:20px}.integrated-theory .theory-diagram{padding:11px 10px}.integrated-theory table th,.integrated-theory table td{padding:7px 5px!important}.integrated-theory p{font-size:15px!important}.integrated-theory .theory-check{padding:11px 12px}}
+@media(prefers-reduced-motion:reduce){.integrated-theory{scroll-behavior:auto}}

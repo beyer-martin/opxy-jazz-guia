@@ -72,7 +72,7 @@ for img in overview.xpath('.//img'):
 controls=[
  ('modos',80,110,'Elegí INSTRUMENT para trabajar con las pistas musicales.'),
  ('módulos',235,110,'M1-M4 están debajo de la pantalla. No son los botones de pista.'),
- ('pistas',485,110,'Los ocho botones bajo los encoders seleccionan la pista. Empezá por la 4.'),
+ ('pistas',485,110,'Los ocho botones bajo los encoders seleccionan la pista. El primer capítulo usa la 5 para el motivo.'),
  ('secuenciador',380,151,'Fila de 16 pasos: decide cuándo suenan las notas. Contá desde la izquierda.'),
  ('transporte',58,224,'RECORD, PLAY y STOP controlan la grabación y reproducción; + y - cambian la octava.'),
  ('teclado',438,230,'Las dos filas inferiores a la derecha de SHIFT son las notas. La primera es Fa.'),
@@ -142,9 +142,13 @@ section{border:0;padding:60px 0 75px}.row{grid-template-columns:1fr 3fr;border:0
 #control-description{font-size:17px;line-height:1.4;min-height:65px;max-width:800px;margin:0;padding:14px 0;border-top:1px solid #555}
 @media(max-width:767px){.control-legend{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}.control-legend button{font-size:16px}.control-heading h2{font-size:28px}.control-map-svg .control-pin{r:10}.control-map-svg .control-pin-text{font-size:11px}}
 '''
-out=previous.replace('<style>'+original_css+'</style>','<style data-origin="teenage.engineering/original-css">'+css+'</style><style>'+original_css+overrides+(root/'work/pdf/lesson_lab.css').read_text()+'</style>')
+out=previous.replace('<style>'+original_css+'</style>','<style data-origin="teenage.engineering/original-css">'+css+'</style><style>'+original_css+overrides+(root/'work/pdf/lesson_lab.css').read_text()+(root/'work/pdf/te_palette.css').read_text()+'</style>')
 out=re.sub(r'<h1>.*?</h1>','<h1>OP–XY<br>composición y jazz.</h1>',out,count=1,flags=re.S)
-out=out.replace('<section id="mapa">',official+'<section id="mapa">',1)
+map_start=out.index('<section id="mapa">')
+map_end=out.index('</section>',map_start)+len('</section>')
+map_body=out[map_start:map_end].replace('<section id="mapa">','<div id="mapa">',1)
+map_body=map_body[:-len('</section>')]+'</div>'
+out=out[:map_start]+official[:-len('</section>')]+map_body+'</section>'+out[map_end:]
 out=out.replace('<script id="data" type="application/json">'+re.search(r'<script id="data" type="application/json">(.*?)</script>',previous,re.S).group(1)+'</script>','<script id="data" type="application/json">'+json.dumps(data,ensure_ascii=False).replace('</','<\\/')+'</script>')
 out=out.replace("'use strict';","'use strict';\n"+predicate,1)
 # Audio is now owned by the per-lesson simulator. Do not inject the obsolete
@@ -163,4 +167,5 @@ document.getElementById('control-description').textContent=CONTROL_DESCRIPTIONS[
 out=out.replace('\n</script>\n</html>',extra+'\n</script>\n</html>')
 out=out.replace('La estructura visual toma como referencia la guía oficial; este cuaderno no es una publicación de Teenage Engineering.','Se reutilizan el HTML de su vista general, sus hojas CSS, fuentes y dibujo vectorial, además de una función de visibilidad del JavaScript original. El secuenciador didáctico es propio. Este cuaderno no es una publicación de Teenage Engineering.')
 (root/'outputs/opxy-jazz-guia-estilo-original.html').write_text(out)
+(root/'opxy-jazz-guia-estilo-original.html').write_text(out)
 print('Manual rebuilt using original HTML, CSS, four font files, overview SVG, and viewport JS.')

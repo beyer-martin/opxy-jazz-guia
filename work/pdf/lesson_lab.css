@@ -30,3 +30,42 @@
 .session-timing{max-width:920px;padding:15px 0;border-top:1px solid #555;border-bottom:1px solid #555}.session-timing summary{font-size:17px;color:#eee;cursor:pointer}.session-timing ol{padding-left:23px}.session-timing li{font-size:16px;margin:10px 0}.session-timing p{font-size:16px}.checkpoint-controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.checkpoint-controls button{font-size:14px;padding:8px}.checkpoint-controls p{width:100%;font-size:15px;color:#aaa}
 @media(max-width:767px){.lab-order,.focus-card{grid-template-columns:1fr;gap:30px}.lesson p{font-size:17px}.theory{padding-left:17px}.lesson-flow>ol>li{padding-left:35px}.sim-controls{align-items:stretch}.sim-controls button{flex:1}.lab .toolbar{align-items:stretch}.lab .toolbar button{flex:1;min-width:140px}.screen-notes{font-size:25px}.screen-context{font-size:14px;line-height:1.5}.finish{padding-left:18px}.sim-photo{margin:0}.event-order{max-height:420px}.lesson h2{overflow-wrap:break-word}}
 @media print{.sim-controls,.lab .toolbar,.finish label{display:none!important}.lab{display:block;break-inside:auto}.sim-screen,.sim-photo,.theory,.finish{break-inside:avoid}.sim-photo svg{min-width:0}.lab-order{display:block}.event-order{max-height:none;overflow:visible}.bar-order button,.event-order button{display:block!important;color:#222!important;background:transparent!important}.screen-notes,.screen-context,.lab h4,.lesson-goal,.lesson-flow li>b,.finish h3,.finish-status,.event-order button b,.scene-recipe li>b{color:#222}.lesson-flow>ol>li:before{background:white;color:#222}.lab .scroll{display:none}.lesson-flow>ol>li{break-inside:avoid}.lesson p{font-size:11pt}.lab-order li{break-inside:avoid}.lesson h2{font-size:25pt}}
+
+/* The learning path prioritizes the piece, today's work, and a clear stopping point. */
+.cycle-brief{border-left:3px solid #ff6559;padding:4px 0 4px 22px;margin:24px 0 30px;max-width:920px}
+.cycle-brief .cycle-label{font-size:12px;font-weight:700;letter-spacing:.1em;color:#ff8c81}
+.cycle-brief h3{margin:8px 0 12px;font-size:24px}
+.cycle-brief p{margin:10px 0;line-height:1.5}
+.cycle-test{font-weight:500}
+.session-timing>ol{padding-left:24px;max-width:940px}
+.session-timing>ol>li{padding:10px 0 14px;border-bottom:1px solid #45434a;line-height:1.55}
+.session-timing>ol>li>small{display:block;margin-top:6px;color:#bdbbc4;font-size:14px}
+.session-timing>details{margin:16px 0}
+.continuity-controls{margin:14px 0;padding:14px 0;border-top:1px solid #555}
+.continuity-controls button{font-weight:700;border-color:#ff8c81}
+.continuity-controls p{font-size:14px;max-width:700px;margin:10px 0}
+.scale-notes{display:flex;flex-wrap:wrap;align-items:center;gap:12px;font-size:22px;margin:24px 0}
+.scale-notes small{font-size:11px;color:#bdbbc4}
+.chord-pair{display:flex;align-items:center;gap:24px;font-size:22px}
+.chord-pair p{line-height:1.9}
+.song-course .rubric table td,.song-course .rubric table th{white-space:normal;min-width:150px;line-height:1.5}
+@media(max-width:600px){.cycle-brief{padding-left:14px}.cycle-brief h3{font-size:21px}.chord-pair{font-size:17px;gap:12px}.scale-notes{gap:8px}}
+main.wrap>h1{font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:46px;line-height:1.05;margin-top:32px;margin-bottom:22px}
+main.wrap>p.intro{margin-top:0;margin-bottom:12px;max-width:720px}
+main.wrap>p.muted{margin-bottom:28px}
+.in-lesson main.wrap>h1,.in-lesson main.wrap>p.intro,.in-lesson main.wrap>p.muted{display:none}
+.bar-copy-controls{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:18px 0;font-size:14px}
+@media(max-width:600px){main.wrap>h1{font-size:35px;margin-top:18px}.bar-copy-controls>span{flex-basis:100%}}
+/* Reading text needs a normal weight; retain the instrument artwork and layout. */
+.wrap{font-family:Arial,Helvetica,sans-serif;color:#dedde2;font-weight:400}
+.wrap p,.wrap li,.wrap label{font-weight:400;line-height:1.5}
+.wrap h2,.wrap h3,.wrap h4{font-family:Arial,Helvetica,sans-serif;font-weight:700}
+.wrap b,.wrap strong{font-weight:700}
+.wrap button,.wrap input,.wrap select,.wrap textarea{font-family:Arial,Helvetica,sans-serif;font-weight:400}
+#index .toc-heading h2{font-weight:700;line-height:1.25}
+#index .toc-heading p{margin:10px 0;color:#bdbbc4;line-height:1.5}
+#index .toc-group h3{font-family:Arial,Helvetica,sans-serif;font-weight:700;color:#bdbbc4}
+#index a.toc-link{color:#dedde2}
+#index a.primary-link{padding:12px 16px;text-decoration:none}
+.lab [hidden]{display:none!important}
+#index[hidden]{display:none!important}
